@@ -24,9 +24,10 @@ Esta aplicación permite a los usuarios calcular su Tasa de Metabolismo Basal (T
 
 ---
 
-## ⚙️ Instalación Local
-Si deseas probar o mejorar este proyecto en tu entorno local:
+## 👤 Autor
+**Rodrigo Sánchez Vargas**
+* Estudiante de Ingeniería Civil en Informática y Telecomunicaciones.
+* Creador de contenido en el canal de YouTube: **[Rodrigo.SV_py](https://www.youtube.com/@Rodrigo.SV_py)**.
 
-1. Clona este repositorio:
-   ```bash
-   git clone [https://github.com/ing-rodrigo-sanchez/Calculadora-de-calorias.git](https://github.com/ing-rodrigo-sanchez/Calculadora-de-calorias.git)
+---
+© 2026 Rodrigo Sánchez Vargas
