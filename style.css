@@ -1,0 +1,222 @@
+:root {
+    --bg-dark: #041712;
+    --bg-mid: #0a2d23;
+    --bg-light: #0f4a3a;
+    --surface: rgba(6, 35, 27, 0.7);
+    --surface-border: rgba(126, 255, 184, 0.28);
+    --accent: #38ff9c;
+    --accent-soft: #8dffbe;
+    --text: #e9fff3;
+    --muted: #bbdecf;
+    --danger: #ffc3c3;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(68, 255, 168, 0.22), transparent 45%),
+        radial-gradient(circle at 92% 12%, rgba(82, 218, 163, 0.2), transparent 40%),
+        linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 48%, var(--bg-light) 100%);
+}
+
+.page-wrap {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px 16px;
+}
+
+.calc-card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 24px;
+    padding: 24px;
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow);
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--accent-soft);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+h1 {
+    margin: 8px 0 8px;
+    font-size: clamp(1.55rem, 2vw, 2rem);
+    line-height: 1.15;
+}
+
+.subtitle {
+    margin: 0 0 20px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+.sex-selector {
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--surface-border);
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.sex-selector legend {
+    grid-column: 1 / -1;
+    padding: 0 4px;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.sex-option {
+    position: relative;
+}
+
+.sex-option input {
+    position: absolute;
+    opacity: 0;
+}
+
+.sex-option span {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(142, 255, 194, 0.25);
+    background: rgba(7, 29, 22, 0.6);
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.sex-option input:checked+span {
+    border-color: var(--accent);
+    background: rgba(56, 255, 156, 0.13);
+    transform: translateY(-1px);
+}
+
+.field {
+    display: grid;
+    gap: 7px;
+}
+
+.field span {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 11px;
+    border: 1px solid rgba(147, 255, 195, 0.3);
+    background: rgba(2, 24, 18, 0.7);
+    color: var(--text);
+    font: inherit;
+}
+
+input::placeholder {
+    color: rgba(233, 255, 243, 0.45);
+}
+
+input:focus,
+select:focus,
+.calculate-btn:focus-visible {
+    outline: 2px solid rgba(56, 255, 156, 0.65);
+    outline-offset: 2px;
+}
+
+.calculate-btn {
+    margin-top: 6px;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 16px;
+    background: linear-gradient(90deg, #23e982 0%, #5dffb0 100%);
+    color: #063021;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(56, 255, 156, 0.3);
+}
+
+.result-box {
+    background: rgba(3, 27, 20, 0.72);
+    border: 1px solid rgba(131, 255, 186, 0.25);
+    border-radius: 13px;
+    padding: 14px;
+}
+
+.result-box.total {
+    border-color: rgba(56, 255, 156, 0.45);
+}
+
+.result-box.goal {
+    border-color: rgba(141, 255, 190, 0.55);
+    background: rgba(8, 38, 29, 0.78);
+}
+
+.result-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.result-value {
+    margin: 5px 0 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.goal-guidance {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.4;
+}
+
+.form-message {
+    min-height: 18px;
+    margin: 0;
+    color: var(--danger);
+    font-size: 0.86rem;
+}
+
+@media (max-width: 520px) {
+    .calc-card {
+        border-radius: 18px;
+        padding: 18px;
+    }
+
+    .sex-selector {
+        grid-template-columns: 1fr;
+    }
+}
