@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calculadora.ing-sanchez-vargas.cl/sitemap.xml
