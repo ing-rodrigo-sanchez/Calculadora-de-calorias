@@ -11,6 +11,31 @@ const activitySelect = document.getElementById("activity");
 const goalSelect = document.getElementById("goal");
 const sexInputs = document.querySelectorAll('input[name="sex"]');
 
+function refreshAds() {
+    const adSlots = document.querySelectorAll(".adsterra-sidebar-slot");
+
+    adSlots.forEach((slot) => {
+        slot.innerHTML = "";
+
+        const configScript = document.createElement("script");
+        configScript.textContent = `
+            atOptions = {
+                'key': 'ea7be7d3aea2dfaf2e6ac27819656173',
+                'format': 'iframe',
+                'height': 600,
+                'width': 160,
+                'params': {}
+            };
+        `;
+
+        const invokeScript = document.createElement("script");
+        invokeScript.src = "https://www.highperformanceformat.com/ea7be7d3aea2dfaf2e6ac27819656173/invoke.js";
+
+        slot.appendChild(configScript);
+        slot.appendChild(invokeScript);
+    });
+}
+
 function formatCalories(value) {
     return `${Math.round(value).toLocaleString("es-ES")} kcal/día`;
 }
@@ -96,4 +121,5 @@ calorieForm.addEventListener("submit", (event) => {
     totalResult.textContent = formatCalories(totalCalories);
     goalResult.textContent = formatCalories(objectiveCalories);
     goalGuidance.textContent = getGoalGuidance(totalCalories, objectiveCalories, goal);
+    refreshAds();
 });
