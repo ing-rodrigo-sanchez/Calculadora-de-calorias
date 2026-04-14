@@ -284,6 +284,44 @@ select:focus,
     border-bottom-color: rgba(141, 255, 190, 0.7);
 }
 
+.adsterra-sidebar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 160px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.adsterra-sidebar.left {
+    left: 20px;
+}
+
+.adsterra-sidebar.right {
+    right: 20px;
+}
+
+.adsterra-sidebar-slot {
+    width: 160px;
+    min-height: 600px;
+}
+
+@media (min-width: 1201px) {
+    .page-wrap {
+        padding-left: 220px;
+        padding-right: 220px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .adsterra-sidebar {
+        display: none;
+    }
+}
+
 @media (max-width: 520px) {
     .calc-card {
         border-radius: 18px;
